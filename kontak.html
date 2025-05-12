@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>MTs AL Falahiyyah Rajeg</title>
+  <link href="index.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="kontak.css">
+  <link rel="icon" href="logo mts.png" type="image/png">
+  <style>
+    /* Your existing styles */
+    .logo {
+      display: flex;
+      align-items: flex-end; 
+    }
+    .logo img {
+      align-self: flex-start;
+    }
+    
+    /* New mobile styles */
+    @media (max-width: 768px) {
+      .header-container {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 15px;
+      }
+      
+      .logo {
+        width: 100%;
+        justify-content: space-between;
+        margin-bottom: 15px;
+      }
+      
+      .logo span {
+        font-size: 18px;
+      }
+      
+      .nav {
+        width: 100%;
+        display: none;
+        flex-direction: column;
+      }
+      
+      .nav.active {
+        display: flex;
+      }
+      
+      .nav-link, .nav-button {
+        padding: 12px;
+        margin: 5px 0;
+        text-align: center;
+        border-radius: 5px;
+      }
+      
+      .nav-button {
+        background-color: #0400ff;
+        color: white;
+      }
+      
+      /* Mobile menu button */
+      .mobile-menu-btn {
+        display: block;
+        background: none;
+        border: none;
+        color: #333;
+        font-size: 24px;
+        cursor: pointer;
+      }
+      
+      /* Show mobile menu button only on mobile */
+      .mobile-menu-btn {
+        display: block;
+      }
+      
+      /* Hide regular nav on mobile */
+      .nav {
+        display: none;
+      }
+      
+      /* Show when active */
+      .nav.active {
+        display: flex;
+      }
+    }
+    
+    /* Desktop styles */
+    @media (min-width: 769px) {
+      .mobile-menu-btn {
+        display: none;
+      }
+      
+      .nav {
+        display: flex;
+        align-items: center;
+      }
+      
+      .nav-link {
+        margin: 0 15px;
+      }
+    }
+  </style>
+</head>
+<body class="bg-white">
+  <header class="header">
+    <div class="header-container">
+      <div class="logo">
+        <img src="logo mts.png" alt="MTs AL Falahiyyah Logo" style="height: 50px; margin-right: 10px;">
+        <span>MTs AL Falahiyyah Rajeg</span>
+        <button class="mobile-menu-btn">☰</button>
+      </div>
+      <nav class="nav">
+        <a class="nav-link" href="index.html">Home</a>
+        <a class="nav-link" href="abouut.html">About</a>
+        <a class="nav-link" href="fasilitas.html">Fasilitas</a>
+        <a class="nav-link" href="kontak.html">Kontak</a>
+        <a class="nav-button" href="registrasi.html">Registrasi</a>
+      </nav>
+    </div>
+  </header> 
+  <main>
+    <!-- Your main content here -->
+  </main>
+
+  <script>
+    // Mobile menu toggle functionality
+    document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+      document.querySelector('.nav').classList.toggle('active');
+    });
+    
+    // Close menu when a link is clicked (for mobile)
+    document.querySelectorAll('.nav-link, .nav-button').forEach(link => {
+      link.addEventListener('click', function() {
+        if (window.innerWidth <= 768) {
+          document.querySelector('.nav').classList.remove('active');
+        }
+      });
+    });
+  </script>
+</body>
+</html>
